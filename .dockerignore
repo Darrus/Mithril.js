@@ -1,0 +1,5 @@
+**/.vscode
+**/dist
+**/publish
+**/node_modules
+**/.git
