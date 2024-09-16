@@ -3,7 +3,9 @@ import "./styles.css";
 
 // Paths
 import Home from "./home";
+import Alt from "./alt";
 
 m.route(document.body, "/home", {
-    "/home": Home
+    "/home": Home,
+    "/alt": Alt
 });
