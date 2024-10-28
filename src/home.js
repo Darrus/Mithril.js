@@ -1,3 +1,4 @@
+import VideoPlayer from "./Components/VideoPlayer.js";
 import model from "./model";
 
 const increaseCount = () => {
@@ -7,7 +8,7 @@ const increaseCount = () => {
 const Home = {
   view: () =>
     m(".w-screen.py-5",
-      m(".flex.flex-col.gap-3",
+      m(".flex.flex-col.gap-3.items-center",
         m(".text-center",
           m("p.text-4xl.font-bold", "Home"),
           m("p.text-lg.text-gray-400", "Count: ", model.count),
@@ -23,6 +24,7 @@ const Home = {
           },
         "Route to alt")
         ),
+        m(VideoPlayer, { source: "http://localhost:5290/api/Video/video.mp4/video.m3u8", controls: true, autoplay: false }),
         m(".text-center",
           m("p.text-sm", "The quick brown fox jump over the lazy dog.")
         )
