@@ -44,8 +44,8 @@ export default function VideoPlayer() {
                 autoplay
             }), 
             m('div.absolute.top-0.right-0.w-100.p-1',
-                m("div.flex.flex-col.g-2.text-white.opacity-50.hover:opacity-100",
-                    m("div.grid.grid-cols-2",
+                m("div.grid.grid-cols-2.gap-x-2.text-white.opacity-10.hover:opacity-100",
+                    m("div.text-right", // Because grid stretches to fit the it's size put inside input to prevent input from stretching
                         m("input", {
                             id: `${GUID}-480P`,
                             type: "radio", 
@@ -53,10 +53,10 @@ export default function VideoPlayer() {
                             value: VideoQuality.VIDEO_480P,
                             onclick: handleQualityOnClick,
                             checked: level == VideoQuality.VIDEO_480P,
-                        }),
-                        m("label", {for: `${GUID}-480P`}, "480P"),
+                        })
                     ),
-                    m("div.grid.grid-cols-2",
+                    m("label", {for: `${GUID}-480P`}, "480P"),
+                    m("div.text-right",
                         m("input", {
                             id: `${GUID}-720P`,
                             type: "radio", 
@@ -64,10 +64,10 @@ export default function VideoPlayer() {
                             value: VideoQuality.VIDEO_720P,
                             checked: level == VideoQuality.VIDEO_720P,
                             onclick: handleQualityOnClick
-                        }),
-                        m("label", {for: `${GUID}-720P`}, "720P")
+                        })
                     ),
-                    m("div.grid.grid-cols-2",
+                    m("label", {for: `${GUID}-720P`}, "720P"),
+                    m("div.text-right",
                         m("input", {
                             id: `${GUID}-1080P`,
                             type: "radio", 
@@ -75,9 +75,9 @@ export default function VideoPlayer() {
                             value: VideoQuality.VIDEO_1080P,
                             checked: level == VideoQuality.VIDEO_1080P,
                             onclick: handleQualityOnClick
-                        }),
-                        m("label", {for: `${GUID}-1080P`}, "1080P")
-                    )
+                        })
+                    ),
+                    m("label", {for: `${GUID}-1080P`}, "1080P")
                 ) 
             )
         )
