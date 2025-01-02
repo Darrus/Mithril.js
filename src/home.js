@@ -25,9 +25,7 @@ const Home = {
           },
         "Route to alt")
         ),
-        m(VideoPlayer, { source: "http://localhost:5290/api/Video/video.mp4/video.m3u8", controls: true, autoplay: false, quality: VideoQuality.VIDEO_480P }),
-        m(VideoPlayer, { source: "http://localhost:5290/api/Video/video.mp4/video.m3u8", controls: true, autoplay: false, quality: VideoQuality.VIDEO_720P }),
-        m(VideoPlayer, { source: "http://localhost:5290/api/Video/video.mp4/video.m3u8", controls: true, autoplay: false, quality: VideoQuality.VIDEO_1080P }),
+        m(VideoPlayer, { source: "http://localhost:5290/api/Video/video.mp4/video.m3u8", controls: true, autoplay: false, quality: VideoQuality.VIDEO_ADAPTIVE }),
         m(".text-center",
           m("p.text-sm", "The quick brown fox jump over the lazy dog.")
         )

@@ -23,14 +23,17 @@ export default function VideoPlayer() {
     }
 
     const handleQualityOnClick = (e) => {
-        level = Number(e.target.value);
-        // Ensure you pass in as a number, if not it'll break!
+        setLevel(e.target.value);
         hls.currentLevel = level;
+    }
+
+    const setLevel = (_level) => {
+        level = Number(_level);
     }
 
     return {
         oninit: ({attrs: { quality = 0 }}) => {
-            level = Number(quality);
+            setLevel(quality);
         },
         oncreate: ({attrs: { source }}) => {
             initHls(source);
